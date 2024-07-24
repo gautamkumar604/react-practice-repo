@@ -13,12 +13,16 @@ export default function TextForm(props) {
     }
     return (
         <>
-        <h1>{props.heading}</h1>
+        <div className="container">
+        <h2>{props.heading}</h2>
         <form className="form-label">
             <label htmlFor="textbox">Message:</label>
             <textarea className="form-control" onChange={handleOnChange} value={text} id="textbox" rows= "8"></textarea>
         </form>
         <button className="btn btn-primary" onClick={handleOnUpperCase}>convert To UpperCase</button>
+        <h3 className='mt-2 bg-dark text-light p-2'>Your Text Summary</h3>
+        <p className='text-muted'>{text.split(" ").length} words and {text.length} characters</p>
+        </div>
         </>
     )
 }
